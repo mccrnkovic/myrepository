@@ -9,15 +9,21 @@
 </head>
 <body>
     <main class="container">
-        <div class="row">
-            <div class="col-sm-6">
-                <div class="img_wrapper">
-                    <img th:src="@{/images/logo.jpg}">
+        <div class="row" id="home_content_wrapper">
+            <section class="col-sm-6">
+                <div id="logo_wrapper">
+                    <img th:src="@{/images/logo.jpeg}" id="logo">
                 </div>
-            </div>
-            <div class="col-sm-6">
-                <p>This is some text. this is also some text</p>
-            </div>
+            </section>
+            <section class="col-sm-6">
+                <div id="login_form_wrapper">
+                    <form>
+                        <input type="text" placeholder="email"><br>
+                        <input type="password" placeholder="password"><br>
+                        <button type="submit" class="btn btn-link">Log in</button>
+                    </form>
+                </div>
+            </section>
         </div>
     </main>
 </body>

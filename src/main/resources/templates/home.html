@@ -2,15 +2,23 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" th:href="@{/styles/bootstrap.css}">
+    <link rel="stylesheet" th:href="@{/styles/bootstrap-theme.css}">
+    <link rel="stylesheet" th:href="@{/styles/custom.css}">
     <title>Akonto</title>
 </head>
 <body>
-    <header>
-        <div id="logo">
-            <img th:src="@{/images/logo.jpg}">
+    <main class="container">
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="img_wrapper">
+                    <img th:src="@{/images/logo.jpg}">
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <p>This is some text. this is also some text</p>
+            </div>
         </div>
-        <br>
-    </header>
-    <h1 style="color:green">This is a homepage.</h1>
+    </main>
 </body>
 </html>

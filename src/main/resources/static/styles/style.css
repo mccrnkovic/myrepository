@@ -1,0 +1,28 @@
+div {
+    border: none;
+}
+
+img {
+    width:100%;
+}
+
+body {
+    background-color: lightgray;
+}
+
+input {
+    margin:10px;
+}
+
+#login_form_wrapper {
+    padding:10px;
+    width:100%;
+}
+
+#logo_wrapper {
+    padding:20px;
+}
+
+#logo {
+    border-radius: 50px;
+}

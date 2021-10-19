@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" th:href="@{/styles/bootstrap.css}">
+    <link rel="stylesheet" th:href="@{/styles/style.css}">
+    <title>Akonto</title>
+</head>
+<body>
+    <main class="container d-flex flex-column">
+        <header class="d-flex justify-content-center">
+            <div id="logo_wrapper">
+                <img th:src="@{/images/logo.jpeg}">
+            </div>
+        </header>
+        <section class="d-flex justify-content-center">
+            <form>
+                <div class="form-group">
+                    <label>Name:</label>
+                    <input type="text" th:id="*{name}">
+                </div>
+            </form>
+        </section>
+    </main>
+</body>
+</html>

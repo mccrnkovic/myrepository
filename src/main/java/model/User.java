@@ -13,6 +13,7 @@ public class User {
     private String password;
     private String hq;
     private Date founded;
+    private BankAccount bankAccount;
     private ArrayList<User> partners;
 
 }

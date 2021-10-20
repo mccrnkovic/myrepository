@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/register")
 public class RegisterController {
 
-
     @GetMapping
     private String show(Model model){
         model.addAttribute("user", new User());

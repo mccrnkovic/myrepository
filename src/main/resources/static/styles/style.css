@@ -10,6 +10,10 @@ body {
     background-color: lightgray;
 }
 
+section {
+    padding: 5px;
+}
+
 input {
     margin:10px;
 }
@@ -20,6 +24,21 @@ main > section {
 
 header > div > img {
     width:200px;
+}
+
+footer {
+    background-color: white;
+    padding:20px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+footer > a, a:active, p {
+    color: gray;
+}
+
+footer > a:hover {
+    color:black;
 }
 
 #login_form_wrapper {

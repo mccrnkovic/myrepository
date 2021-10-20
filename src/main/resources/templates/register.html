@@ -14,31 +14,44 @@
             </div>
         </header>
         <section class="d-flex justify-content-center">
-            <form method="post" th:action="@{/register}" th:object="${user}" class="d-flex flex-column justify-content-around">
-                <div class="form-group">
-                    <label>Name:</label><br>
-                    <input type="text" th:field="*{name}">
+            <form method="post" th:action="@{/register}" th:object="${user}">
+                <div class="d-flex flex-column align-items-end">
+                    <div class="form-group">
+                        <label>Name:</label>
+                        <input type="text" th:field="*{name}">
+                    </div>
+                    <div class="form-group">
+                        <label>Email:</label>
+                        <input type="text" th:field="*{email}">
+                    </div>
+                    <div class="form-group">
+                        <label>Password:</label>
+                        <input type="password" th:field="*{password}">
+                    </div>
+                    <div class="form-group">
+                        <label>Headquarters:</label>
+                        <input type="text" th:field="*{hq}">
+                    </div>
+                    <div class="form-group">
+                        <label>IBAN:</label>
+                        <input type="text" th:field="*{bankAccount.iban}">
+                    </div>
+                    <div class="form-group">
+                        <label>Founded:</label>
+                        <input type="date" th:field="*{founded}">
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label>Email:</label><br>
-                    <input type="text" th:field="*{email}">
+                <div class="form-group d-flex flex-column">
+                    <input type="submit" value="Register" class="btn btn-primary">
+                    <a class="btn btn-link" href="/">Back to home</a>
                 </div>
-                <div class="form-group">
-                    <label>Password:</label><br>
-                    <input type="password" th:field="*{password}">
-                </div>
-                <div class="form-group">
-                    <label>Headquarters:</label><br>
-                    <input type="text" th:field="*{hq}">
-                </div>
-                <div class="form-group">
-                    <label>Founded:</label><br>
-                    <input type="date" th:field="*{founded}">
-                </div>
-                <input type="submit" value="Register" class="btn btn-primary">
-                <a class="btn btn-link" href="/">Back to home</a>
             </form>
         </section>
+        <footer class="d-flex justify-content-around">
+            <a href="#">Instagram</a>
+            <div><p>© 2021 Akonto</p></div>
+            <a href="#">Facebook</a>
+        </footer>
     </main>
 </body>
 </html>

@@ -2,10 +2,7 @@ package model;
 
 import lombok.Data;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -13,6 +10,7 @@ import java.util.Date;
 @Entity
 public class User {
     @Id
+    @GeneratedValue
     private Integer id;
     private String name;
     private String email;

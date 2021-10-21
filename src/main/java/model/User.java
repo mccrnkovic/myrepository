@@ -1,6 +1,7 @@
 package model;
 
 import lombok.Data;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -16,6 +17,9 @@ public class User {
     private String email;
     private String password;
     private String hq;
+    private Boolean admin;
+
+    @DateTimeFormat(pattern = "yyyy-mm-dd")
     private Date founded;
 
     @OneToOne

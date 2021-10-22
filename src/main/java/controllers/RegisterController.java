@@ -1,7 +1,6 @@
 package controllers;
 
 import lombok.extern.slf4j.Slf4j;
-import model.BankAccount;
 import model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -10,13 +9,17 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-
 @Slf4j
 @Controller
 @RequestMapping("/register")
 public class RegisterController {
+
+    public final UserService userService;
+
+    @Autowired
+    public RegisterController(UserService userService) {
+        this.userService = userService;
+    }
 
     @GetMapping
     private String show(Model model){
@@ -27,7 +30,8 @@ public class RegisterController {
     @PostMapping
     private String register(User user){
         user.setAdmin(false);
+        userService.addUser(user);
         log.info("Registering user: " + user);
-        return "home";
+        return "redirect:/";
     }
 }

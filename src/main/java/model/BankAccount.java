@@ -9,7 +9,7 @@ import javax.persistence.OneToMany;
 import java.util.ArrayList;
 
 @Data
-@Entity
+@Entity(name = "BankAccount")
 public class BankAccount {
     @Id
     private String iban;

@@ -2,14 +2,14 @@ package model;
 
 
 import lombok.Data;
+import org.hibernate.validator.constraints.UniqueElements;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
-import java.util.ArrayList;
-import java.util.Date;
+import java.util.*;
 
 @Data
 @Entity(name = "User")
@@ -41,6 +41,6 @@ public class User {
     private BankAccount bankAccount;
 
     @OneToMany
-    private ArrayList<User> partners;
+    private Set<User> partners = new HashSet<User>();
 
 }

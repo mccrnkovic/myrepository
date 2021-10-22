@@ -1,15 +1,12 @@
 package controllers;
 
-import model.BankAccount;
+import lombok.extern.slf4j.Slf4j;
 import model.User;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-
+@Slf4j
 @Service
-@ComponentScan
 public class UserService{
 
     private UserRepository userRepository;
@@ -21,13 +18,11 @@ public class UserService{
         this.bankAccountRepository = bankAccountRepository;
     }
 
-    public ArrayList<User> selectAll(){
-        return (ArrayList<User>) userRepository.findAll();
-    }
-    public void addUser(User user){
+    public void addUser(User user) {
+        bankAccountRepository.save(user.getBankAccount());
         userRepository.save(user);
+        log.info("USER REGISTERED: " + user);
     }
-    public void addBankAccount(BankAccount bankAccount){
-        bankAccountRepository.save(bankAccount);
-    }
+
+
 }

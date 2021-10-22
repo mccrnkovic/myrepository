@@ -14,12 +14,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/register")
 public class RegisterController {
 
-    public final UserService userService;
+    private final UserService userService;
 
     @Autowired
     public RegisterController(UserService userService) {
         this.userService = userService;
     }
+
 
     @GetMapping
     private String show(Model model){
@@ -30,8 +31,8 @@ public class RegisterController {
     @PostMapping
     private String register(User user){
         user.setAdmin(false);
-        userService.addUser(user);
         log.info("Registering user: " + user);
+        userService.addUser(user);
         return "redirect:/";
     }
 }

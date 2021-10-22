@@ -2,11 +2,9 @@ package model;
 
 import lombok.Data;
 
-import javax.persistence.ElementCollection;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 import java.util.ArrayList;
+import java.util.List;
 
 @Data
 @Entity(name = "BankAccount")
@@ -17,5 +15,5 @@ public class BankAccount {
     private Double balance;
 
     @OneToMany
-    private ArrayList<Transaction> transactions;
+    private List<Transaction> transactions = new ArrayList<Transaction>();
 }

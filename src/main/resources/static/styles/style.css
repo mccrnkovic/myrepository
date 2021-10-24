@@ -1,6 +1,7 @@
-div {
-    border: none;
+article {
+    background-color: white;
 }
+
 
 img {
     width:100%;
@@ -14,20 +15,20 @@ section {
     padding: 5px;
 }
 
-input {
-    margin:10px;
-}
-
 main > section {
     background-color: white;
 }
 
-header > div > img {
+header {
+    background-color: whitesmoke;
+}
+
+header > div {
     width:200px;
 }
 
 footer {
-    background-color: white;
+    background-color: whitesmoke;
     padding:20px;
     margin-top: 5px;
     margin-bottom: 5px;
@@ -41,13 +42,25 @@ footer > a:hover {
     color:black;
 }
 
+nav > ul {
+    list-style-type: none;
+}
+
+article {
+    padding:20px;
+}
+
+.logo_wrapper {
+    padding:10px;
+}
+
+.img_wrapper {
+
+}
+
 #login_form_wrapper {
     padding:10px;
     width:100%;
-}
-
-#logo_wrapper {
-    padding:20px;
 }
 
 #logo {

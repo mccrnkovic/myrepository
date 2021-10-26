@@ -3,11 +3,14 @@ package controllers;
 import lombok.extern.slf4j.Slf4j;
 import model.User;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 @Slf4j
 @Service
-public class UserService{
+public class UserService implements UserDetailsService {
 
     private UserRepository userRepository;
     private BankAccountRepository bankAccountRepository;
@@ -25,4 +28,14 @@ public class UserService{
     }
 
 
+    @Override
+    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+        User user= userRepository.findByUsername(username);
+        if(user != null){
+            return user;
+        }
+        else {
+            throw new UsernameNotFoundException(username + "not found.");
+        }
+    }
 }

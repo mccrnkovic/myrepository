@@ -3,6 +3,8 @@ package model;
 import lombok.Data;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -10,8 +12,10 @@ import java.util.List;
 @Entity(name = "BankAccount")
 public class BankAccount {
     @Id
+    @NotNull
     private String iban;
 
+    @NotBlank
     private Double balance;
 
     @OneToMany

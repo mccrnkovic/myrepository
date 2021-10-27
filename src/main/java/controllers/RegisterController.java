@@ -36,6 +36,6 @@ public class RegisterController {
         user.setPassword(BCryptPasswordEncoder.encode(user.getPassword()));
         log.info("Registering user: " + user);
         userService.addUser(user);
-        return "redirect:/";
+        return "redirect:/login";
     }
 }

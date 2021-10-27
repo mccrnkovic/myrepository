@@ -21,6 +21,7 @@ public class User implements UserDetails{
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
 
+    @NotNull
     @NotBlank(message = "You did not give a name")
     private String username;
 
@@ -36,12 +37,12 @@ public class User implements UserDetails{
 
     private Boolean admin;
 
-    @DateTimeFormat(pattern = "yyyy-mm-dd")
-    private Date founded;
-
     @OneToOne
     @NotNull
     private BankAccount bankAccount;
+
+    @DateTimeFormat(pattern = "yyyy-mm-dd")
+    private Date founded;
 
     @OneToMany
     private Set<User> partners = new HashSet<User>();

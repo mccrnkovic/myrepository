@@ -16,6 +16,14 @@
         </header>
         <section class="d-flex justify-content-center">
             <form method="post" th:action="@{/register}" th:object="${user}">
+                <div class="d-flex flex-column align-items-end justify-content-center" id="form_span_wrapper">
+                    <span th:if="${#fields.hasErrors('username')}" th:errors="*{username}"></span>
+                    <span th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></span>
+                    <span th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></span>
+                    <span th:if="${#fields.hasErrors('hq')}" th:errors="*{hq}"></span>
+                    <span th:if="${#fields.hasErrors('bankAccount.iban')}" th:errors="*{bankAccount.iban}"></span>
+                    <span th:if="${#fields.hasErrors('bankAccount.balance')}" th:errors="*{bankAccount.balance}"></span><br>
+                </div>
                 <div class="d-flex flex-column align-items-end">
                     <div class="form-group">
                         <label>Name:</label>

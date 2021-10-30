@@ -2,13 +2,13 @@ package model;
 
 
 import lombok.Data;
-import org.hibernate.validator.constraints.UniqueElements;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import javax.persistence.*;
+import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -38,7 +38,7 @@ public class User implements UserDetails{
     private Boolean admin;
 
     @OneToOne
-    @NotNull
+    @Valid
     private BankAccount bankAccount;
 
     @DateTimeFormat(pattern = "yyyy-mm-dd")

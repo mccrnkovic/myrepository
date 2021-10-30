@@ -12,10 +12,10 @@ import java.util.List;
 @Entity(name = "BankAccount")
 public class BankAccount {
     @Id
-    @NotNull
+    @NotBlank(message="Please provide an IBAN")
     private String iban;
 
-    @NotBlank
+    @NotNull(message = "Please provide a balance")
     private Double balance;
 
     @OneToMany

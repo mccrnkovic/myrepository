@@ -8,7 +8,7 @@
   <title>Akonto</title>
 </head>
 <body>
-<main class="container">
+<div class="container">
   <header class="d-flex flex-column align-items-center justify-content-md-between flex-md-row">
     <div class="logo_wrapper">
       <a th:href="@{/}"><img th:src="@{/images/logo.jpeg}"></a>
@@ -18,7 +18,7 @@
       <a th:href="@{/register}" class="btn btn-link">Register</a>
     </nav>
   </header>
-  <section class="d-flex flex-column">
+  <main class="d-flex flex-column">
     <article class="d-flex flex-md-row flex-column">
       <div class="img_wrapper col-md-6">
         <img th:src="@{/images/image1.jpg}">
@@ -79,12 +79,12 @@
         </p>
       </div>
     </article>
-  </section>
+  </main>
   <footer class="d-flex justify-content-around">
     <a href="#">Instagram</a>
     <div><p>© 2021 Akonto</p></div>
     <a href="#">Facebook</a>
   </footer>
-</main>
+</div>
 </body>
 </html>

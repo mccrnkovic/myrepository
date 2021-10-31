@@ -38,6 +38,11 @@ footer {
     margin-bottom: 5px;
 }
 
+main {
+    width:100%;
+    background-color:white;
+}
+
 footer > a, a:active, p {
     color: gray;
 }
@@ -69,4 +74,8 @@ article {
 
 #logo {
     border-radius: 50px;
+}
+
+#profile_data {
+    padding:50px;
 }

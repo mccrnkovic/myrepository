@@ -15,6 +15,7 @@ public class Bill {
 
     @OneToOne
     private User buyer;
+
     @OneToOne
     private User seller;
 

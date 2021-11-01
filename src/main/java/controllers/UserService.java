@@ -3,6 +3,7 @@ package controllers;
 import lombok.extern.slf4j.Slf4j;
 import model.User;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -37,5 +38,12 @@ public class UserService implements UserDetailsService {
         else {
             throw new UsernameNotFoundException(username + "not found.");
         }
+    }
+
+    public User getCurrentUser(){
+        return (User) loadUserByUsername(((UserDetails) SecurityContextHolder
+                .getContext()
+                .getAuthentication()
+                .getPrincipal()).getUsername());
     }
 }

@@ -22,14 +22,8 @@ public class ProfileController {
 
     @GetMapping
     public String show(Model model){
-        Object userDetailsObject = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-        String username = "None";
-        if(userDetailsObject instanceof UserDetails){
-            username=((UserDetails) userDetailsObject).getUsername();
-        }
-
-        User user= (User) userService.loadUserByUsername(username);
-
+        User user = (User) userService.loadUserByUsername(((UserDetails) SecurityContextHolder
+                .getContext().getAuthentication().getPrincipal()).getUsername());
         model.addAttribute("user", user);
         return "profile";
     }

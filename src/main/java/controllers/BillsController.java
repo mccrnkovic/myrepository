@@ -7,8 +7,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import java.util.Date;
 import java.util.List;
 
 @Controller
@@ -31,5 +33,21 @@ public class BillsController {
         List<Bill> bills = billService.loadAllByUser(userService.getCurrentUser());
         model.addAttribute("bills", bills);
         return "bills";
+    }
+
+    @GetMapping("/newbill")
+    public String newBill(Model model){
+        model.addAttribute("bill", new Bill());
+        return "billForm";
+    }
+
+    @PostMapping("/newbill")
+    public String saveBill(Bill bill){
+
+        bill.setIssued(new Date());
+        bill.setSeller(userService.getCurrentUser());
+        bill.setPaid(false);
+        billService.addBill(bill);
+        return "redirect:/bills";
     }
 }

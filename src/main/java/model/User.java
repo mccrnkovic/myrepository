@@ -73,4 +73,63 @@ public class User implements UserDetails{
         return true;
     }
 
+    public static class UserBuilder {
+        private String username;
+        private String password;
+        private String email;
+        private String hq;
+        private BankAccount bankAccount;
+
+        public UserBuilder setBankAccount(BankAccount bankAccount) {
+            this.bankAccount = bankAccount;
+            return this;
+        }
+
+        public UserBuilder(String username) {
+            this.username = username;
+        }
+
+        public UserBuilder setUsername(String username) {
+            this.username = username;
+            return this;
+        }
+
+        public UserBuilder setPassword(String password) {
+            this.password = password;
+            return this;
+        }
+
+        public UserBuilder setEmail(String email) {
+            this.email = email;
+            return this;
+        }
+
+        public UserBuilder setHq(String hq) {
+            this.hq = hq;
+            return this;
+        }
+
+        public User build(){
+            User user= new User();
+            user.setHq(this.hq);
+            user.setUsername(this.username);
+            user.setEmail(this.email);
+            user.setPassword(this.password);
+            user.setBankAccount(this.bankAccount);
+            return user;
+        }
+
+        public User tmp(){
+            BankAccount.BankAccountBuilder bankAccountBuilder = new BankAccount.BankAccountBuilder("tmpiban");
+            bankAccountBuilder.setBalance(0.0);
+            User user = new User();
+            user.setUsername("tmpUser");
+            user.setBankAccount(bankAccountBuilder.build());
+            user.setPassword("tmppass");
+            user.setHq("tmphq");
+            user.setEmail("tmpemail");
+            return user;
+        }
+    }
+
 }

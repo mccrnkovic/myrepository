@@ -20,4 +20,28 @@ public class BankAccount {
 
     @OneToMany
     private List<Transaction> transactions = new ArrayList<Transaction>();
+
+    public static class BankAccountBuilder {
+        String iban;
+        Double balance;
+
+        public BankAccountBuilder(String iban) {
+            this.iban = iban;
+        }
+
+        public BankAccount build() {
+            BankAccount bankAccount = new BankAccount();
+            bankAccount.setIban(this.iban);
+            bankAccount.setBalance(this.balance);
+            return bankAccount;
+        }
+
+        public void setIban(String iban) {
+            this.iban = iban;
+        }
+
+        public void setBalance(Double balance) {
+            this.balance = balance;
+        }
+    }
 }

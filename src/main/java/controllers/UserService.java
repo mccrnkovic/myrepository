@@ -41,9 +41,9 @@ public class UserService implements UserDetailsService {
     }
 
     public User getCurrentUser(){
-        return (User) loadUserByUsername(((UserDetails) SecurityContextHolder
-                .getContext()
-                .getAuthentication()
-                .getPrincipal()).getUsername());
+        String username=((UserDetails)SecurityContextHolder.getContext()
+                .getAuthentication().getPrincipal()).getUsername();
+
+        return (User) loadUserByUsername(username);
     }
 }

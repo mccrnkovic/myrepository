@@ -14,7 +14,7 @@
                 <img th:src="@{/images/logo.jpeg}">
             </div>
         </header>
-        <section class="d-flex justify-content-center">
+        <main class="d-flex justify-content-center">
             <form method="post" th:action="@{/register}" th:object="${user}">
                 <div class="d-flex flex-column align-items-end justify-content-center" id="form_span_wrapper">
                     <span th:if="${#fields.hasErrors('username')}" th:errors="*{username}"></span>
@@ -59,7 +59,7 @@
                     <a class="btn btn-link" href="/">Back to home</a>
                 </div>
             </form>
-        </section>
+        </main>
         <footer class="d-flex justify-content-around">
             <a href="#">Instagram</a>
             <div><p>© 2021 Akonto</p></div>

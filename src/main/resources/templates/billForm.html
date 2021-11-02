@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" th:href="@{/styles/bootstrap.css}">
+    <link rel="stylesheet" th:href="@{/styles/theme.css}">
+    <link rel="stylesheet" th:href="@{/styles/style.css}">
+    <title>Akonto</title>
+</head>
+<body>
+<div class="container">
+    <header class="d-flex flex-column align-items-center justify-content-md-between flex-md-row">
+        <div class="logo_wrapper">
+            <a th:href="@{/}"><img th:src="@{/images/logo.jpeg}"></a>
+        </div>
+        <nav class="navbar navbar-expand-md">
+            <ul class="navbar-nav d-flex flex-md-row flex-column align-items-center">
+                <li class="nav-item"><a class="nav-link btn-link btn-group" th:href="@{/profile}">Profile</a></li>
+                <li class="nav-item"><a class="nav-link btn-link btn-group" th:href="@{/bills}">Bills</a></li>
+                <li class="nav-item"><a class="nav-link btn-link btn-group" href="#">Transactions</a></li>
+                <li class="nav-item">
+                    <form method="post" th:action="@{/logout}">
+                        <button class="nav-link btn btn-link btn-group" href="#">Log out</button>
+                    </form>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main class="d-flex justify-content-center">
+        <form method="post" th:action="@{/bills/newbill}" th:object="${bill}">
+            <div class="form-group">
+                <label>Name of buyer:</label>
+                <input type="text" class="form-control" th:field="*{buyer.username}">
+            </div>
+            <div class="form-group">
+                <label>Price:</label>
+                <input type="text" class="form-control" th:field="*{price}">
+            </div>
+            <button type="submit" class="btn btn-primary">Issue bill</button>
+        </form>
+    </main>
+    <footer class="d-flex justify-content-around">
+        <a href="#">Instagram</a>
+        <div><p>© 2021 Akonto</p></div>
+        <a href="#">Facebook</a>
+    </footer>
+</div>
+</body>
+</html>

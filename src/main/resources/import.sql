@@ -1,2 +1,2 @@
 INSERT INTO BANK_ACCOUNT VALUES ('hrkek11223', 22.33);
-INSERT INTO USER(ID, USERNAME, EMAIL, PASSWORD, HQ, ADMIN, BANK_ACCOUNT_IBAN) VALUES (1, 'mihamanijak', 'crnkovicmihovil@gmail.com', '$2a$10$IKd.m86sz/hxh5Lh1cNp8O1U2681pTQvgINE.hjMi7YVsFkM0cM6q', 'Zagreb', true, 'hrkek11223');
+INSERT INTO USER(ID, USERNAME, EMAIL, PASSWORD, HQ, ADMIN, BANK_ACCOUNT_IBAN) VALUES (0, 'mihamanijak', 'crnkovicmihovil@gmail.com', '$2a$10$IKd.m86sz/hxh5Lh1cNp8O1U2681pTQvgINE.hjMi7YVsFkM0cM6q', 'Zagreb', true, 'hrkek11223');

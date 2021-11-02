@@ -10,6 +10,6 @@ import java.util.List;
 @Repository
 public interface BillRepository extends JpaRepository<Bill, Integer> {
 
-    List<Bill> findAllByBuyerAndSeller(User user, User user1);
+    List<Bill> findAllByBuyerOrSeller(User user, User user1);
 
 }

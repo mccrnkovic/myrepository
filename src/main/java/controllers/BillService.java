@@ -20,6 +20,6 @@ public class BillService{
     }
 
     public List<Bill> loadAllByUser(User user){
-        return billRepository.findAllByBuyerAndSeller(user);
+        return billRepository.findAllByBuyerAndSeller(user, user);
     }
 }

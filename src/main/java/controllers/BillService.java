@@ -36,6 +36,7 @@ public class BillService{
             billRepository.save(bill);
         }
         catch (UsernameNotFoundException e){
+            log.error(e.getMessage());
             BankAccount.BankAccountBuilder bankAccountBuilder = new BankAccount.BankAccountBuilder("tmpiban");
             bankAccountBuilder.setBalance(0.0);
             User.UserBuilder userBuilder = new User.UserBuilder("tmpUser");

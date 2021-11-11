@@ -24,11 +24,6 @@ public class HomeController {
         return "home";
     }
 
-    /*@GetMapping("/home")
-    private String home(){
-        return "loginHome";
-    }*/
-
     @GetMapping("/login")
     private String login(){
         return "login";

@@ -15,8 +15,8 @@
             </div>
             <nav class="navbar navbar-expand-md">
                 <ul class="navbar-nav d-flex flex-md-row flex-column align-items-center">
-                    <li class="nav-item"><a class="nav-link btn-link btn-group" href="#">Profile</a></li>
-                    <li class="nav-item"><a class="nav-link btn-link btn-group" href="#">Bills</a></li>
+                    <li class="nav-item"><a class="nav-link btn-link btn-group" th:href="@{/profile}">Profile</a></li>
+                    <li class="nav-item"><a class="nav-link btn-link btn-group" th:href="@{/bills}">Bills</a></li>
                     <li class="nav-item"><a class="nav-link btn-link btn-group" href="#">Transactions</a></li>
                     <li class="nav-item">
                         <form method="post" th:action="@{/logout}">

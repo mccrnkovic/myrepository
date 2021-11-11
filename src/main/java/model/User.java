@@ -80,6 +80,10 @@ public class User implements UserDetails{
         private String hq;
         private BankAccount bankAccount;
 
+        public UserBuilder() {
+
+        }
+
         public UserBuilder setBankAccount(BankAccount bankAccount) {
             this.bankAccount = bankAccount;
             return this;
